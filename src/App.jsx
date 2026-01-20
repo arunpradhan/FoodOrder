@@ -4,11 +4,13 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Book from './pages/Book'
 import Menu from './pages/menu'
+import Navigation from './components/Navigation'
 
 function App() {
 
   return (
     <BrowserRouter>
+      <Navigation/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>} />
