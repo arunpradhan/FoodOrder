@@ -14,6 +14,8 @@ export default function Navigation() {
           <Nav className="ms-auto">
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/about" className="nav-link">About</Link>
+            <Link to="/menu" className="nav-link">Menu</Link>
+            <Link to="/book-order" className="nav-link">Book Order</Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

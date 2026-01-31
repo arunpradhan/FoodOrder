@@ -5,6 +5,7 @@ import About from './pages/About'
 import Book from './pages/Book'
 import Menu from './pages/menu'
 import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/menu' element={<Menu/>} />
         <Route path='/book-order' element={<Book/>} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
