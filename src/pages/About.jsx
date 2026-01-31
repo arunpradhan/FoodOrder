@@ -5,12 +5,12 @@ export default function About() {
     return (
         <Container>
             <Row className="align-items-center">
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className="order-2 order-md-1">
                     <div className="img-box">
                         <img src="/images/about-img.png" alt="About Us" />
                     </div>
                 </Col>
-                <Col xs={12} md={6} className="d-flex align-items-center">
+                <Col xs={12} md={6} className="d-flex align-items-center order-1 order-md-2">
                     <div>
                         <h2>We are FoodOrder</h2>
                         <p>
