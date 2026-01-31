@@ -9,6 +9,10 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
 /* Home Page */
+.hero-section-container {
+    padding: 0;
+ }
+
 .offer_section {
     position: relative;
     padding-bottom: 45px;
@@ -86,10 +90,6 @@ body {
 }
 
 
-.
-element.style {
-    display: none;
-}
 .book_section .form_container .form-control {
     width: 100%;
     border: none;
