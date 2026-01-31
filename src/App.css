@@ -10,7 +10,7 @@ body {
 
 /* Home Page */
 .hero-section-container {
-    padding: 0;
+    padding: 0 !important;
  }
 
 .offer_section {
@@ -115,10 +115,10 @@ select {
 
 /* About page */
 
-/* .about_section {
+.about_section {
     background: #222831;
     color: #ffffff;
-} */
+}
 
 .img-box {
     position: relative;
