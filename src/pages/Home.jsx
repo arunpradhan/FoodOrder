@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export default function Home() {
     return (
-        <main>
+        <>
 
             {/* HERO SECTION */}
             <section className="hero-section">
@@ -101,6 +101,6 @@ export default function Home() {
                 </Container>
             </section>
 
-        </main>
+        </>
     );
 }
