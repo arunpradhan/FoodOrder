@@ -5,9 +5,6 @@ body {
     line-height: 1.6;
 }
 
-/* import fonts -  font-family: 'Open Sans', sans-serif and  font-family: 'Dancing Script', cursive; */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
-
 /* Prevents footer floating up on short pages. */
 .main-content {
   min-height: calc(100vh - 160px); /* nav + footer height */
@@ -56,12 +53,12 @@ body {
     text-decoration: none;
 }
 .offer_section .box .detail-box h5 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Segoe UI', cursive;
     font-size: 24px;
     margin: 0;
 }
 .offer_section .box .detail-box h6 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Segoe UI', cursive;
     margin: 10px 0;
 }
 @media (max-width: 992px) {
@@ -200,4 +197,11 @@ select {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
 }

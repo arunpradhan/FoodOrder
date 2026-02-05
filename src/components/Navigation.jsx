@@ -9,7 +9,7 @@ export default function Navigation() {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="/">FoodOrder</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className='order-2 order-md-1'/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Link to="/" className="nav-link">Home</Link>
@@ -29,6 +29,7 @@ export default function Navigation() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <Link to="/cart" className="nav-link order-1 order-md-2"><i className="bi bi-cart4"></i> (0)</Link>
       </Container>
     </Navbar>
   );

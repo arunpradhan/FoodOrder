@@ -42,7 +42,7 @@ export default function Menu() {
                                                     $20
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@ export default function Menu() {
                                                     $15
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -92,7 +92,7 @@ export default function Menu() {
                                                     $10
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -117,7 +117,7 @@ export default function Menu() {
                                                     $30
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -142,7 +142,7 @@ export default function Menu() {
                                                     $14
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -167,7 +167,7 @@ export default function Menu() {
                                                     $12
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -192,7 +192,7 @@ export default function Menu() {
                                                     $18
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -217,7 +217,7 @@ export default function Menu() {
                                                     $25
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -242,7 +242,7 @@ export default function Menu() {
                                                     $52
                                                 </h6>
                                                 <a href="" className="button-link">
-                                                    Buy
+                                                    <i className="bi bi-cart4"></i> Buy
                                                 </a>
                                             </div>
                                         </div>
@@ -250,6 +250,16 @@ export default function Menu() {
                                 </div>
                             </Col>
 
+                        </Row>
+                        <Row className="mt-5 align-items-end">
+                            <Col xs={12} lg={4} md={6}>
+                                <ul className="pagination">
+                                    <li>First Page</li>
+                                    <li>Next</li>
+                                    <li>Previous</li>
+                                    <li>Last Page</li>
+                                </ul>
+                            </Col>
                         </Row>
                     </div>
                 </Container>
