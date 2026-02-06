@@ -1,6 +1,16 @@
 import { Container, Row, Col } from "react-bootstrap";
 
+import { addToCart } from "../redux/action";
+import { useDispatch } from "react-redux";
+
 export default function Menu() {
+
+    const dispatch = useDispatch();
+    const foodMenu = {
+        name: "Delicious Pizza",
+        type: "Pizza",
+        price: 20
+    }
     return (
         <>
             <section className="food_section layout_padding">
@@ -41,9 +51,9 @@ export default function Menu() {
                                                 <h6 className="align-content-center">
                                                     $20
                                                 </h6>
-                                                <a href="" className="button-link">
+                                                <button onClick={() => dispatch(addToCart(foodMenu))} className="button-link">
                                                     <i className="bi bi-cart4"></i> Buy
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
