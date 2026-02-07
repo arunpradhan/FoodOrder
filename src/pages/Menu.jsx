@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 
-import { addToCart } from "../redux/action";
+import { addToCart, emptyCart, removeToCart } from "../redux/action";
 import { useDispatch } from "react-redux";
 
 export default function Menu() {
@@ -16,8 +16,13 @@ export default function Menu() {
             <section className="food_section layout_padding">
                 <Container>
                     <Row className="align-items-center">
-                        <Col>
+                        <Col xs={12} md={12} lg={11} xl={11} xxl={11}>
                             <h2 style={{ textAlign: "center" }}>Our Menu</h2>
+                        </Col>
+                        <Col xs={12} md={12} lg={1} xl={1} xxl={1}>
+                            <h6>
+                                <a onClick={() => dispatch(emptyCart())} style={{ textDecoration: "underline", cursor: "pointer" }}>Clear Cart</a>
+                            </h6>
                         </Col>
                     </Row>
                     <Row className="align-items-center">
@@ -53,6 +58,9 @@ export default function Menu() {
                                                 </h6>
                                                 <button onClick={() => dispatch(addToCart(foodMenu))} className="button-link">
                                                     <i className="bi bi-cart4"></i> Buy
+                                                </button>
+                                                <button onClick={() => dispatch(removeToCart(foodMenu))} className="button-link">
+                                                    Remove From Cart
                                                 </button>
                                             </div>
                                         </div>

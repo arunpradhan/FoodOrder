@@ -5,7 +5,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from "react-redux"
-import { useEffect } from 'react';
 
 export default function Navigation() {
 
@@ -37,7 +36,7 @@ export default function Navigation() {
           </Nav>
         </Navbar.Collapse>
         <Link to="/cart" className="nav-link cart-count-btn order-1 order-md-2">
-          <i className="bi bi-cart4"></i> 
+          Cart <i className="bi bi-cart4"></i> 
           <span className='cart-count'>{result.length}</span>
         </Link>
       </Container>

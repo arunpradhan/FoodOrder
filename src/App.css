@@ -16,13 +16,16 @@ body {
     width: 100px;
     align-content: center;
     text-align: center;
-    background-color: #ffbe33;
+    background-color: #ffbe33 !important;
 }
 .cart-count {
     background-color: #222831;
     color: #FFF;
-    padding: 0px 3px;
-    border-radius: 5px;
+    padding: 0px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 11px;
+    font-size: 11px;
 }
 /* Home Page */
 .hero-section-container {

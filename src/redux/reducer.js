@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_TO_CART, UPDATE_TO_CART } from "./constant";
+import { ADD_TO_CART, REMOVE_TO_CART, EMPTY_CART } from "./constant";
 
 export const cartData = (data = [], action) => {
     
@@ -9,14 +9,18 @@ export const cartData = (data = [], action) => {
             // add to cart
             console.warn(ADD_TO_CART, action);
             return [action.data, ...data]; // [new data, old data]
+
         case REMOVE_TO_CART:
             // remove to cart
             console.warn(REMOVE_TO_CART, action);
-            return 1-1;
-        case UPDATE_TO_CART:
+            data.length = data.length ? data.length-1 : [];
+            return [...data];
+
+        case EMPTY_CART:
             // Update to cart
-            console.warn(UPDATE_TO_CART, action);
-            return 1+1;
+            console.warn(EMPTY_CART, action);
+            data = [];
+            return [...data];
     
         default:
             return data;//"No action matched";
