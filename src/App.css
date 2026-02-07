@@ -10,6 +10,20 @@ body {
   min-height: calc(100vh - 160px); /* nav + footer height */
 }
 
+/* Navigation */
+.cart-count-btn {
+    height: 40px;
+    width: 100px;
+    align-content: center;
+    text-align: center;
+    background-color: #ffbe33;
+}
+.cart-count {
+    background-color: #222831;
+    color: #FFF;
+    padding: 0px 3px;
+    border-radius: 5px;
+}
 /* Home Page */
 .hero-section-container {
     padding: 0 !important;
