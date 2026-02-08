@@ -24,3 +24,11 @@ npm install redux-saga
 
 ## Redux ToolKit
 'createStore' is deprecated. That's why we used the Redux Toolkit for the "Store".
+
+## Setup JSON Sever API
+*Used for Fake/Custom Dummy API
+Install: npm install json-server
+Run the JSON Server: npx json-server db.json
+http://localhost:3000/
+Change Server Port (if required): npx json-server --watch db.json --port 3500
+https://github.com/typicode/json-server
