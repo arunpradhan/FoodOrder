@@ -21,3 +21,6 @@ npm install react-redux
 npm install redux-saga
 1. create action.js, reducer.js and store.js files inside the redux folder
 2. might be, if we have multiple reducer files then we should include all of them in single one that's why we introduce rootReducer.js
+
+## Redux ToolKit
+'createStore' is deprecated. That's why we used the Redux Toolkit for the "Store".
