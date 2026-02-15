@@ -6,6 +6,7 @@ import Book from './pages/Book'
 import Menu from './pages/menu'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import Cart from './pages/Cart'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/about' element={<About/>} />
         <Route path='/menu' element={<Menu/>} />
         <Route path='/book-order' element={<Book/>} />
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
       </main>
       <Footer/>

@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 
-import { addToCart, emptyCart, removeToCart } from "../redux/action";
+import { addToCart, removeToCart } from "../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { productList } from "../redux/productAction";
 import { useEffect } from "react";
@@ -20,13 +20,8 @@ export default function Menu() {
             <section className="food_section layout_padding">
                 <Container>
                     <Row className="align-items-center">
-                        <Col xs={12} md={12} lg={10} xl={10} xxl={10}>
+                        <Col>
                             <h2 style={{ textAlign: "center" }}>Our Menu</h2>
-                        </Col>
-                        <Col xs={12} md={12} lg={2} xl={2} xxl={2}>
-                            <h6>
-                                <a onClick={() => dispatch(emptyCart())} style={{ textDecoration: "underline", cursor: "pointer" }}>Clear Cart</a>
-                            </h6>
                         </Col>
                     </Row>
                     <Row className="align-items-center">
