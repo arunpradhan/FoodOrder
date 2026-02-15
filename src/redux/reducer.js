@@ -13,8 +13,10 @@ export const cartData = (data = [], action) => {
         case REMOVE_TO_CART:
             // remove to cart
             console.warn(REMOVE_TO_CART, action);
-            data.length = data.length ? data.length-1 : [];
-            return [...data];
+            // data.length = data.length ? data.length-1 : [];
+            const remainingItem = data.filter((item)=> item.id != action.data);
+            console.warn("remaining Item", remainingItem);
+            return [...remainingItem];
 
         case EMPTY_CART:
             // Update to cart

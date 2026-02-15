@@ -34,3 +34,7 @@ Run the JSON Server: npx json-server db.json
 http://localhost:3000/
 Change Server Port (if required): npx json-server --watch db.json --port 3500
 https://github.com/typicode/json-server
+
+## BootStrap ICON
+npm i bootstrap-icons
+https://icons.getbootstrap.com/

@@ -62,10 +62,10 @@ export default function Menu() {
                                                         ${item.price}
                                                     </h6>
                                                     <button onClick={() => dispatch(addToCart(item))} className="button-link">
-                                                        <i className="bi bi-cart4"></i> Buy
+                                                        <i className="bi bi-cart4"></i> Add To Cart
                                                     </button>
                                                     <button onClick={() => dispatch(removeToCart(item.id))} className="button-link">
-                                                        Remove From Cart
+                                                        <i className="bi bi-trash"></i> Remove From Cart
                                                     </button>
                                                 </div>
                                             </div>
