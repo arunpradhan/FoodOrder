@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { addToCart, emptyCart, removeToCart } from "../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { productList } from "../redux/productAction";
+import { useEffect } from "react";
 
 export default function Menu() {
 
@@ -10,11 +11,10 @@ export default function Menu() {
     let data = useSelector((state) => state.productData);
     console.warn("data in menu component from saga...", data);
     
-    const foodMenu = {
-        name: "Delicious Pizza",
-        type: "Pizza",
-        price: 20
-    }
+    // Call API's data on page load
+    useEffect(() => {
+       dispatch(productList())
+    }, [])
     return (
         <>
             <section className="food_section layout_padding">
@@ -25,8 +25,7 @@ export default function Menu() {
                         </Col>
                         <Col xs={12} md={12} lg={2} xl={2} xxl={2}>
                             <h6>
-                                <a onClick={() => dispatch(emptyCart())} style={{ textDecoration: "underline", cursor: "pointer" }}>Clear Cart</a> | 
-                                <a onClick={() => dispatch(productList())} style={{ textDecoration: "underline", cursor: "pointer" }}>Get Product</a> | 
+                                <a onClick={() => dispatch(emptyCart())} style={{ textDecoration: "underline", cursor: "pointer" }}>Clear Cart</a>
                             </h6>
                         </Col>
                     </Row>
@@ -43,236 +42,40 @@ export default function Menu() {
                     </Row>
                     <div className="filters-content">
                         <Row>
-                            
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f1.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Delicious Pizza
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $20
-                                                </h6>
-                                                <button onClick={() => dispatch(addToCart(foodMenu))} className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </button>
-                                                <button onClick={() => dispatch(removeToCart(foodMenu))} className="button-link">
-                                                    Remove From Cart
-                                                </button>
+                            {
+                                data.map((item) => (
+                                <Col xs={12} md={4} key={item.id}>
+                                    <div className="box">
+                                        <div>
+                                            <div className="img-box">
+                                                <img src={`/images/${item.foodLocalImage}`} className="img-fluid" alt=""/>
+                                            </div>
+                                            <div className="detail-box">
+                                                <h5>
+                                                    {item.name}
+                                                </h5>
+                                                <p>
+                                                    {item.description}
+                                                </p>
+                                                <div className="options">
+                                                    <h6 className="align-content-center">
+                                                        ${item.price}
+                                                    </h6>
+                                                    <button onClick={() => dispatch(addToCart(item))} className="button-link">
+                                                        <i className="bi bi-cart4"></i> Buy
+                                                    </button>
+                                                    <button onClick={() => dispatch(removeToCart(item.id))} className="button-link">
+                                                        Remove From Cart
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f2.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Delicious Burger
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $15
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f3.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Delicious Pizza
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $10
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f4.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Delicious Pasta
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $30
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f5.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                French Fries
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $14
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f6.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Tasty Pizza
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $12
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f7.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Tasty Burger
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $18
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f8.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Tasty Burger
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $25
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="box">
-                                    <div>
-                                        <div className="img-box">
-                                            <img src="images/f9.png" className="img-fluid" alt=""/>
-                                        </div>
-                                        <div className="detail-box">
-                                            <h5>
-                                                Delicious Pasta
-                                            </h5>
-                                            <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                                            </p>
-                                            <div className="options">
-                                                <h6 className="align-content-center">
-                                                    $52
-                                                </h6>
-                                                <a href="" className="button-link">
-                                                    <i className="bi bi-cart4"></i> Buy
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
+                                </Col>
 
+                                ))
+                            }
+                            
                         </Row>
                         <Row className="mt-5 align-items-end">
                             <Col xs={12} lg={4} md={6}>
