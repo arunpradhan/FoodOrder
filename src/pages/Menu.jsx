@@ -1,12 +1,15 @@
 import { Container, Row, Col } from "react-bootstrap";
 
 import { addToCart, emptyCart, removeToCart } from "../redux/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { productList } from "../redux/productAction";
 
 export default function Menu() {
 
     const dispatch = useDispatch();
+    let data = useSelector((state) => state.productData);
+    console.warn("data in menu component from saga...", data);
+    
     const foodMenu = {
         name: "Delicious Pizza",
         type: "Pizza",
