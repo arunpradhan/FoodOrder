@@ -1,9 +1,17 @@
-import { PRODUCT_LIST, SET_PRODUCT_LIST } from "./constant";
+import { PRODUCT_LIST, SEARCH_PRODUCT, SET_PRODUCT_LIST } from "./constant";
 
 export const productList = () => {
     return {
         type: PRODUCT_LIST,
         // data: "hello"
+    }
+    
+}
+
+export const productSearch = (query) => {
+    return {
+        type: SEARCH_PRODUCT,
+        query,
     }
     
 }

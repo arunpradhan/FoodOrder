@@ -4,11 +4,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import {productSearch} from '../redux/productAction'
 
 export default function Navigation() {
 
   const result = useSelector((state) => state.cartData);
+  const dispatch = useDispatch();
   console.warn("navigation", result);
 
   return (
@@ -18,6 +20,9 @@ export default function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" className='order-2 order-md-1' />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
+            <div>
+              <input type='text' name='search' onChange={(event) => dispatch(productSearch(event.target.value))} className="form-control" placeholder='Search Food...'/>
+            </div>
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/menu" className="nav-link">Menu</Link>
